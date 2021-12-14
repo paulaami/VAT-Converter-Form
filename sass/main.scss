@@ -1,0 +1,152 @@
+@import "./colors";
+@import "./mixins";
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+  font-family: "Poppins", sans-serif;
+  color: $dark-blue;
+}
+
+body {
+  background-color: $pure-white;
+  min-height: 100vh;
+}
+
+.form__section {
+  padding: 40px 20px;
+  &-container {
+    @include border-style;
+    @include flex-style;
+
+    align-items: center;
+    padding: 40px 0;
+    margin: 0 auto;
+    width: 90vw;
+    max-width: 400px;
+    background-color: $light-blue;
+
+    &-title {
+      margin-bottom: 30px;
+      font-weight: 500;
+      font-size: 2.4rem;
+    }
+
+    .wrapper {
+      @include flex-style;
+
+      align-items: center;
+      max-width: 100%;
+    }
+  }
+  &-image {
+    background-color: $light-blue;
+  }
+
+  &-main {
+    max-width: 100%;
+    .form {
+      @include flex-style;
+      padding: 0 10px;
+
+      &-text {
+        margin-top: 20px;
+      }
+
+      label,
+      p {
+        font-size: 1.6rem;
+      }
+
+      textarea:focus,
+      input:focus,
+      select:focus,
+      button:focus {
+        outline-color: $blue;
+      }
+
+      textarea,
+      input,
+      select,
+      button {
+        @include border-style;
+
+        font-size: 1.6rem;
+      }
+
+      textarea,
+      input,
+      button {
+        padding: 10px;
+      }
+
+      input[type="radio"] {
+        margin-right: 10px;
+      }
+
+      input:disabled {
+        background-color: $disabled-gray;
+      }
+
+      select {
+        padding: 5px;
+      }
+
+      &__button {
+        margin-top: 30px;
+        background-color: $purple;
+        color: $pure-white;
+        cursor: pointer;
+        transition: background-color 0.3s;
+
+        &:hover {
+          background-color: lighten($purple, 5%);
+        }
+      }
+
+      .label-space {
+        margin-top: 20px;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .form__section {
+    height: 100vh;
+    &-container {
+      position: relative;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+  }
+}
+@media screen and (min-width: 1200px) {
+  .form__section {
+    &-container {
+      max-width: 950px;
+
+      .wrapper {
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+        width: 100%;
+
+        img {
+          width: 420px;
+        }
+      }
+
+      &-title {
+        font-size: 3.6rem;
+      }
+    }
+  }
+}

@@ -1,0 +1,9 @@
+@mixin border-style {
+  border: 1px solid $gray;
+  border-radius: 8px;
+}
+
+@mixin flex-style {
+ display: flex;
+ flex-direction: column;
+}

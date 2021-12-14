@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+ <meta charset="UTF-8">
+ <meta http-equiv="X-UA-Compatible" content="IE=edge">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>VAT converter form</title>
+ <link rel="icon" href="data:;base64,iVBORw0KGgo=">
+ <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap" rel="stylesheet">
+ <link rel="stylesheet" href="css/main.css">
+</head>
+
+<body>
+
+ <main>
+  <section class="form__section">
+   <div class="form__section-container">
+    <h1 class="form__section-container-title">VAT Converter Form</h1>
+    <div class="wrapper">
+     <div class="form__section-image">
+      <img src="/img/calculator.svg" alt="Photo of calculator">
+     </div>
+     <div class="form__section-main">
+      <form class="form" action="">
+       <label for="description">Description</label>
+       <textarea name="description" id="description" class="form__description" cols="30" rows="5" maxlength="255"
+        required></textarea>
+       <p class="validation__text"></p>
+       <p class="validation__letters"></p>
+
+       <p class="form__text label-space">Send confirmation</p>
+       <div class="form__section-flex">
+        <input type="radio" id="confirmation" value="YES/NO" required><label for="confirmation">YES/NO</label>
+       </div>
+
+       <label for="vat-rate" class="label-space">VAT</label>
+       <select name="vat-rate" id="vat-rate" class="vat__rate test" required>
+        <option value="choose">--Choose VAT--</option>
+        <option value="19%">19%</option>
+        <option value="21%">21%</option>
+        <option value="23%">23%</option>
+        <option value="25%">25%</option>
+       </select>
+
+       <label for="price-netto" class="label-space">Price netto EUR</label>
+       <input type="text" id="price-netto" name="price-netto" class="price__netto test" required>
+       <p class="validation__numbers"></p>
+
+       <label for="price-brutto" class="label-space">Price brutto EUR</label>
+       <input type="text" id="price-brutto" name="price-brutto" class="price__brutto" disabled>
+
+       <button type="submit" class="form__button">Submit</button>
+      </form>
+     </div>
+    </div>
+   </div>
+  </section>
+ </main>
+
+ <footer></footer>
+
+ <script src="/script.js"></script>
+</body>
+
+</html>
