@@ -11,17 +11,21 @@
 
 html {
   font-size: 62.5%;
+}
+
+body {
+  min-height: 100vh;
+  background-color: $pure-white;
   font-family: "Poppins", sans-serif;
   color: $dark-blue;
 }
 
-body {
-  background-color: $pure-white;
-  min-height: 100vh;
-}
-
-.warning-border {
-  border-color: $red;
+.cls-1 {
+  fill: none;
+  stroke: #fff;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 2px;
 }
 
 .form__section {
@@ -55,6 +59,7 @@ body {
   }
 
   &-main {
+    position: relative;
     max-width: 100%;
     .form {
       @include flex-style;
@@ -115,19 +120,55 @@ body {
         background-color: $disabled-gray;
       }
 
+      .vat__rate {
+        padding: 0.5rem;
+      }
+
       .label-space {
-        margin-top: 2.5rem;
+        margin-top: 3rem;
       }
 
       .warning-text {
-        margin: 0.1rem 0;
-        height: 1.4rem;
+        margin: 0.1rem 0 0.1rem 1.1rem;
+        height: 1.6rem;
         font-size: 1.4rem;
         color: $red;
       }
 
-      .vat__rate {
-        padding: 0.5rem;
+      .warning-border {
+        border: 0.1rem solid $red;
+        background-color: #ff000017;
+      }
+    }
+
+    .green-box {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      padding: 5rem 2rem;
+      width: 100%;
+      transform: translate(-50%, -50%);
+      border-radius: 0.8rem;
+      background-color: $green;
+      display: none;
+
+      &-text {
+        text-align: center;
+        font-size: 2.3rem;
+        color: $pure-white;
+      }
+
+      &-btn {
+        position: absolute;
+        top: 1rem;
+        right: 1rem;
+        background: transparent;
+        border: transparent;
+        cursor: pointer;
+      }
+
+      &-close {
+        width: 3rem;
       }
     }
   }

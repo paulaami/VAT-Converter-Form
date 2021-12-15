@@ -9,7 +9,7 @@ const allInputs = Array.from(document.querySelectorAll(".all-inputs"));
 
 const maxLength = 255;
 const letters = /^[A-Za-z]+$/;
-const regex = /^\d+([\,]\d+)*([\.]\d+)?$/;
+const priceRegex = /^\d+([\,]\d+)*([\.]\d+)?$/;
 priceNetto.disabled = true;
 
 // TEXT AREA VALIDATION
@@ -23,12 +23,13 @@ const textValidation = () => {
  } else if (formDescriptionValue.length >= maxLength) {
   formDescriptionValue = formDescriptionValue.substring(0, maxLength);
   validationText.textContent = "You can’t enter more than 255 characters";
-  formDescription.style.borderColor = "red";
  }
 
  if (/\d/.test(formDescriptionValue)) {
+  formDescription.classList.add("warning-border");
   validationLetters.textContent = "Text is required";
  } else {
+  formDescription.classList.remove("warning-border");
   validationLetters.textContent = "";
  }
 }
@@ -47,9 +48,11 @@ const vatValidation = () => {
 // SHOULD BE ONLY POSITIVE NUMBERS? 
 const nettoValidation = () => {
  let nettoValue = priceNetto.value;
- if (nettoValue.match(regex)) {
+ if (nettoValue.match(priceRegex) || nettoValue == '') {
+  priceNetto.classList.remove("warning-border");
   validationNumbers.textContent = "";
  } else {
+  priceNetto.classList.add("warning-border");
   validationNumbers.textContent = "Please, enter input number";
  }
 }
