@@ -23,45 +23,62 @@
      </div>
      <div class="form__section-main">
       <form class="form" action="">
-       <label for="description">Description</label>
-       <textarea name="description" id="description" class="form__description all-inputs" cols="30" rows="5"
-        maxlength="255" required></textarea>
-       <p class="validation__text warning-text"></p>
-       <p class="validation__letters warning-text"></p>
-
-       <p class="form__text">Send confirmation</p>
-       <div class="form__section-flex">
-        <input type="radio" id="confirmation" value="YES/NO" required><label for="confirmation">YES/NO</label>
+       <div class="form__box">
+        <label for="description">Description</label>
+        <textarea name="description" id="description" class="form__description all-inputs" cols="30" rows="5"
+         maxlength="255" required></textarea>
+        <p class="validation__text"></p>
+        <p class="validation__required warning-text after-submit"></p>
        </div>
 
-       <label for="vat-rate" class="label-space">VAT</label>
-       <select name="vat-rate" id="vat-rate" class="vat__rate all-inputs" required>
-        <option value="choose">--Choose VAT--</option>
-        <option value="19%">19%</option>
-        <option value="21%">21%</option>
-        <option value="23%">23%</option>
-        <option value="25%">25%</option>
-       </select>
+       <div class="form__box">
+        <p class="form__text">Send confirmation</p>
+        <div class="form__section-flex">
+         <input type="radio" id="confirmation" class="all-inputs" value="YES/NO" required><label
+          for="confirmation">YES/NO</label>
+         <p class="validation__confirm warning-text"></p>
+        </div>
+       </div>
 
-       <label for="price-netto" class="label-space">Price netto EUR</label>
-       <input type="text" id="price-netto" name="price-netto" class="price__netto all-inputs" required>
-       <p class="validation__numbers warning-text"></p>
+       <div class="form__box">
+        <label for="vat-rate" class="label-vat">VAT</label>
+        <select name="vat-rate" id="vat-rate" class="vat__rate all-inputs" required>
+         <option value="choose">--Choose VAT--</option>
+         <option value="19%">19%</option>
+         <option value="21%">21%</option>
+         <option value="23%">23%</option>
+         <option value="25%">25%</option>
+        </select>
+        <p class="validation__vat warning-text"></p>
+       </div>
 
-       <label for="price-brutto" class="form__text">Price brutto EUR</label>
-       <input type="text" id="price-brutto" name="price-brutto" class="price__brutto" disabled>
+       <div class="form__box">
+        <label for="price-netto" class="label-space">Price netto EUR</label>
+        <input type="text" id="price-netto" name="price-netto" class="all-inputs" required>
+        <p class="validation__numbers warning-text"></p>
+        <p class="text-required warning-text after-submit"></p>
+       </div>
+
+       <div class="form__box">
+        <label for="price-brutto" class="form__text">Price brutto EUR</label>
+        <input type="text" id="price-brutto" name="price-brutto" disabled>
+       </div>
+
 
        <button type="submit" class="form__button">Submit</button>
       </form>
+
       <div class="green-box">
        <p class="green-box-text">The form was successfully sent!</p>
-       <button class="green-box-btn"><svg class="green-box-close" viewBox="0 0 32 32"
-         xmlns="http://www.w3.org/2000/svg">
+       <button class="green-box-btn">
+        <svg class="green-box-close" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
          <title />
          <g id="cross">
           <line class="cls-1" x1="7" x2="25" y1="7" y2="25" />
           <line class="cls-1" x1="7" x2="25" y1="25" y2="7" />
          </g>
-        </svg></button>
+        </svg>
+       </button>
 
       </div>
      </div>

@@ -20,14 +20,6 @@ body {
   color: $dark-blue;
 }
 
-.cls-1 {
-  fill: none;
-  stroke: #fff;
-  stroke-linecap: round;
-  stroke-linejoin: round;
-  stroke-width: 2px;
-}
-
 .form__section {
   padding: 4rem 2rem;
   &-container {
@@ -40,6 +32,7 @@ body {
     width: 90vw;
     max-width: 400px;
     background-color: $light-blue;
+    box-shadow: 0 0 0.6rem $gray;
 
     &-title {
       margin-bottom: 3rem;
@@ -64,6 +57,12 @@ body {
     .form {
       @include flex-style;
       padding: 0 1rem;
+
+      &__box {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+      }
 
       &__text {
         margin-top: 0.6rem;
@@ -120,17 +119,32 @@ body {
         background-color: $disabled-gray;
       }
 
+      .after-submit {
+        position: absolute;
+        right: 0;
+        top: .3rem;
+      }
+
       .vat__rate {
         padding: 0.5rem;
       }
 
-      .label-space {
-        margin-top: 3rem;
+      .label-vat {
+        margin-top: 10px;
+      }
+
+      // .label-space {
+      //   margin-top: 2rem;
+      // }
+
+      .validation__text {
+        height: 2rem;
+        font-size: 1.4rem;
       }
 
       .warning-text {
-        margin: 0.1rem 0 0.1rem 1.1rem;
-        height: 1.6rem;
+        // margin: 0.1rem 0 0.1rem 1.1rem;
+        height: 2rem;
         font-size: 1.4rem;
         color: $red;
       }
@@ -143,14 +157,14 @@ body {
 
     .green-box {
       position: absolute;
-      top: 50%;
+      top: -100%;
       left: 50%;
       padding: 5rem 2rem;
       width: 100%;
       transform: translate(-50%, -50%);
       border-radius: 0.8rem;
       background-color: $green;
-      display: none;
+      transition: top 1s;
 
       &-text {
         text-align: center;
@@ -171,22 +185,28 @@ body {
         width: 3rem;
       }
     }
+
+    .show-greenbox {
+      top: 50%;
+    }
   }
 }
 
-@media screen and (min-width: 768px) {
+.cls-1 {
+  fill: none;
+  stroke: #fff;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 2px;
+}
+
+@media screen and (min-width: 992px) {
   .form__section {
     height: 100vh;
     &-container {
       position: relative;
       top: 50%;
       transform: translateY(-50%);
-    }
-  }
-}
-@media screen and (min-width: 1200px) {
-  .form__section {
-    &-container {
       max-width: 95rem;
 
       .wrapper {
