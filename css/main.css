@@ -89,6 +89,23 @@ body {
   margin-top: 6px;
 }
 
+.form__section-main .form__description {
+  resize: vertical;
+}
+
+.form__section-main .form__button {
+  margin-top: 30px;
+  background-color: #5673ac;
+  color: #fff;
+  cursor: pointer;
+  -webkit-transition: background-color 0.3s;
+  transition: background-color 0.3s;
+}
+
+.form__section-main .form__button:hover {
+  background-color: #6781b4;
+}
+
 .form__section-main .form label,
 .form__section-main .form p {
   font-size: 1.6rem;
@@ -124,23 +141,6 @@ body {
   background-color: #d8d8d8;
 }
 
-.form__section-main .form select {
-  padding: 5px;
-}
-
-.form__section-main .form__button {
-  margin-top: 30px;
-  background-color: #5673ac;
-  color: #fff;
-  cursor: pointer;
-  -webkit-transition: background-color 0.3s;
-  transition: background-color 0.3s;
-}
-
-.form__section-main .form__button:hover {
-  background-color: #6781b4;
-}
-
 .form__section-main .form .label-space {
   margin-top: 25px;
 }
@@ -150,6 +150,10 @@ body {
   height: 14px;
   font-size: 1.4rem;
   color: #ff0000;
+}
+
+.form__section-main .form .vat__rate {
+  padding: 5px;
 }
 
 @media screen and (min-width: 768px) {

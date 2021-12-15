@@ -44,7 +44,7 @@ const vatValidation = () => {
 }
 
 // NETTO INPUT VALIDATION
-// SHOULD BE ONLY POSITIVE NUMBERS?
+// SHOULD BE ONLY POSITIVE NUMBERS? 
 const nettoValidation = () => {
  let nettoValue = priceNetto.value;
  if (nettoValue.match(regex)) {
