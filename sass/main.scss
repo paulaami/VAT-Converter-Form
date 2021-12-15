@@ -25,20 +25,20 @@ body {
 }
 
 .form__section {
-  padding: 40px 20px;
+  padding: 4rem 2rem;
   &-container {
     @include border-style;
     @include flex-style;
 
     align-items: center;
-    padding: 40px 0;
+    padding: 4rem 0;
     margin: 0 auto;
     width: 90vw;
     max-width: 400px;
     background-color: $light-blue;
 
     &-title {
-      margin-bottom: 30px;
+      margin-bottom: 3rem;
       font-weight: 500;
       font-size: 2.4rem;
     }
@@ -58,10 +58,10 @@ body {
     max-width: 100%;
     .form {
       @include flex-style;
-      padding: 0 10px;
+      padding: 0 1rem;
 
       &__text {
-        margin-top: 6px;
+        margin-top: 0.6rem;
       }
 
       &__description {
@@ -69,7 +69,7 @@ body {
       }
 
       &__button {
-        margin-top: 30px;
+        margin-top: 3rem;
         background-color: $purple;
         color: $pure-white;
         cursor: pointer;
@@ -104,11 +104,11 @@ body {
       textarea,
       input,
       button {
-        padding: 10px;
+        padding: 1rem;
       }
 
       input[type="radio"] {
-        margin-right: 10px;
+        margin-right: 1rem;
       }
 
       input:disabled {
@@ -116,18 +116,18 @@ body {
       }
 
       .label-space {
-        margin-top: 25px;
+        margin-top: 2.5rem;
       }
 
       .warning-text {
-        margin: 1px 0;
-        height: 14px;
+        margin: 0.1rem 0;
+        height: 1.4rem;
         font-size: 1.4rem;
         color: $red;
       }
 
       .vat__rate {
-        padding: 5px;
+        padding: 0.5rem;
       }
     }
   }
@@ -146,7 +146,7 @@ body {
 @media screen and (min-width: 1200px) {
   .form__section {
     &-container {
-      max-width: 950px;
+      max-width: 95rem;
 
       .wrapper {
         flex-direction: row;
@@ -155,7 +155,7 @@ body {
         width: 100%;
 
         img {
-          width: 420px;
+          width: 42rem;
         }
       }
 

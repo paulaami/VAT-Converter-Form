@@ -23,7 +23,7 @@ body {
 }
 
 .form__section {
-  padding: 40px 20px;
+  padding: 4rem 2rem;
 }
 
 .form__section-container {
@@ -39,7 +39,7 @@ body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  padding: 40px 0;
+  padding: 4rem 0;
   margin: 0 auto;
   width: 90vw;
   max-width: 400px;
@@ -47,7 +47,7 @@ body {
 }
 
 .form__section-container-title {
-  margin-bottom: 30px;
+  margin-bottom: 3rem;
   font-weight: 500;
   font-size: 2.4rem;
 }
@@ -82,11 +82,11 @@ body {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  padding: 0 10px;
+  padding: 0 1rem;
 }
 
 .form__section-main .form__text {
-  margin-top: 6px;
+  margin-top: 0.6rem;
 }
 
 .form__section-main .form__description {
@@ -94,7 +94,7 @@ body {
 }
 
 .form__section-main .form__button {
-  margin-top: 30px;
+  margin-top: 3rem;
   background-color: #5673ac;
   color: #fff;
   cursor: pointer;
@@ -130,11 +130,11 @@ body {
 .form__section-main .form textarea,
 .form__section-main .form input,
 .form__section-main .form button {
-  padding: 10px;
+  padding: 1rem;
 }
 
 .form__section-main .form input[type="radio"] {
-  margin-right: 10px;
+  margin-right: 1rem;
 }
 
 .form__section-main .form input:disabled {
@@ -142,18 +142,18 @@ body {
 }
 
 .form__section-main .form .label-space {
-  margin-top: 25px;
+  margin-top: 2.5rem;
 }
 
 .form__section-main .form .warning-text {
-  margin: 1px 0;
-  height: 14px;
+  margin: 0.1rem 0;
+  height: 1.4rem;
   font-size: 1.4rem;
   color: #ff0000;
 }
 
 .form__section-main .form .vat__rate {
-  padding: 5px;
+  padding: 0.5rem;
 }
 
 @media screen and (min-width: 768px) {
@@ -170,7 +170,7 @@ body {
 
 @media screen and (min-width: 1200px) {
   .form__section-container {
-    max-width: 950px;
+    max-width: 95rem;
   }
   .form__section-container .wrapper {
     -webkit-box-orient: horizontal;
@@ -185,7 +185,7 @@ body {
     width: 100%;
   }
   .form__section-container .wrapper img {
-    width: 420px;
+    width: 42rem;
   }
   .form__section-container-title {
     font-size: 3.6rem;
