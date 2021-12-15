@@ -24,18 +24,18 @@
      <div class="form__section-main">
       <form class="form" action="">
        <label for="description">Description</label>
-       <textarea name="description" id="description" class="form__description" cols="30" rows="5" maxlength="255"
+       <textarea name="description" id="description" class="form__description all-inputs" cols="30" rows="5" maxlength="255"
         required></textarea>
-       <p class="validation__text"></p>
-       <p class="validation__letters"></p>
+       <p class="validation__text warning-text"></p>
+       <p class="validation__letters warning-text"></p>
 
-       <p class="form__text label-space">Send confirmation</p>
+       <p class="form__text">Send confirmation</p>
        <div class="form__section-flex">
         <input type="radio" id="confirmation" value="YES/NO" required><label for="confirmation">YES/NO</label>
        </div>
 
        <label for="vat-rate" class="label-space">VAT</label>
-       <select name="vat-rate" id="vat-rate" class="vat__rate test" required>
+       <select name="vat-rate" id="vat-rate" class="vat__rate all-inputs" required>
         <option value="choose">--Choose VAT--</option>
         <option value="19%">19%</option>
         <option value="21%">21%</option>
@@ -44,10 +44,10 @@
        </select>
 
        <label for="price-netto" class="label-space">Price netto EUR</label>
-       <input type="text" id="price-netto" name="price-netto" class="price__netto test" required>
-       <p class="validation__numbers"></p>
+       <input type="text" id="price-netto" name="price-netto" class="price__netto all-inputs" required>
+       <p class="validation__numbers warning-text"></p>
 
-       <label for="price-brutto" class="label-space">Price brutto EUR</label>
+       <label for="price-brutto" class="form__text">Price brutto EUR</label>
        <input type="text" id="price-brutto" name="price-brutto" class="price__brutto" disabled>
 
        <button type="submit" class="form__button">Submit</button>

@@ -5,12 +5,16 @@ const validationNumbers = document.querySelector('.validation__numbers');
 const priceNetto = document.querySelector(".price__netto");
 const priceBrutto = document.querySelector(".price__brutto");
 const vatRate = document.querySelector(".vat__rate");
-const test = Array.from(document.querySelectorAll(".test"));
+const allInputs = Array.from(document.querySelectorAll(".all-inputs"));
+
 const maxLength = 255;
 const letters = /^[A-Za-z]+$/;
+const regex = /^\d+([\,]\d+)*([\.]\d+)?$/;
+priceNetto.disabled = true;
 
-formDescription.addEventListener("keyup", (event) => {
- let formDescriptionValue = event.target.value;
+// TEXT AREA VALIDATION
+const textValidation = () => {
+ let formDescriptionValue = formDescription.value;
  let remainingChar = maxLength - formDescriptionValue.length;
  validationText.textContent = `You can add ${remainingChar} more characters`;
 
@@ -19,6 +23,7 @@ formDescription.addEventListener("keyup", (event) => {
  } else if (formDescriptionValue.length >= maxLength) {
   formDescriptionValue = formDescriptionValue.substring(0, maxLength);
   validationText.textContent = "You can’t enter more than 255 characters";
+  formDescription.style.borderColor = "red";
  }
 
  if (/\d/.test(formDescriptionValue)) {
@@ -26,50 +31,48 @@ formDescription.addEventListener("keyup", (event) => {
  } else {
   validationLetters.textContent = "";
  }
-});
+}
 
-priceNetto.disabled = true;
-vatRate.addEventListener("change", function () {
- if (this.value !== "choose") {
+// VAT SELECT VALIDATION
+const vatValidation = () => {
+ let vatValue = vatRate.value;
+ if (vatValue !== "choose") {
   priceNetto.disabled = false;
- } else if (this.value === "choose") {
+ } else if (vatValue === "choose") {
   priceNetto.disabled = true;
  }
+}
 
- let currentValue = this.value;
- // console.log(parseFloat(vatRate.value) / 100.0);
-});
-
-/* Price shouldn't be a negative number..? */
-
-const regex = /^\d+([\,]\d+)*([\.]\d+)?$/;
-priceNetto.addEventListener('keyup', (event) => {
- let nettoValue = event.target.value;
+// NETTO INPUT VALIDATION
+// SHOULD BE ONLY POSITIVE NUMBERS?
+const nettoValidation = () => {
+ let nettoValue = priceNetto.value;
  if (nettoValue.match(regex)) {
   validationNumbers.textContent = "";
  } else {
   validationNumbers.textContent = "Please, enter input number";
  }
+}
 
- /*if (nettoValue == '') {
+// BRUTTO INPUT VALIDATION
+const bruttoValidation = () => {
+ let convertedPrice = priceNetto.value.replace(/,/g, '.');
+ if (convertedPrice == '') {
   validationNumbers.textContent = "";
-  priceBrutto.value = '';
- } else if (nettoValue >= 0) {
-  priceBrutto.value = nettoValue * (parseFloat(vatRate.value) / 100.0)
-  console.log(parseFloat(vatRate.value) / 100.0)
- }*/
-});
+  priceBrutto.value = "";
+ } else if (convertedPrice >= 0) {
+  priceBrutto.value = convertedPrice * (parseFloat(vatRate.value) / 100.0) + parseFloat(convertedPrice);
+ }
+}
 
-test.forEach(function (el) {
- el.addEventListener('input', function () {
-  if (priceNetto.value == '') {
-   validationNumbers.textContent = "";
-   priceBrutto.value = "";
-  } else if (priceNetto.value >= 0) {
-   let withoutComa = priceNetto.value.replace(/,/g, '.');
-   console.log(withoutComa)
-   priceBrutto.value = withoutComa * (parseFloat(vatRate.value) / 100.0) + parseFloat(withoutComa);
-  }
- })
+const inputsValidation = () => {
+ textValidation()
+ vatValidation()
+ nettoValidation()
+ bruttoValidation()
+}
+
+allInputs.forEach((input) => {
+ input.addEventListener('input', inputsValidation)
 })
 

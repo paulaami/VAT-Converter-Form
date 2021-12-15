@@ -20,6 +20,10 @@ body {
   min-height: 100vh;
 }
 
+.warning-border {
+  border-color: $red;
+}
+
 .form__section {
   padding: 40px 20px;
   &-container {
@@ -56,8 +60,8 @@ body {
       @include flex-style;
       padding: 0 10px;
 
-      &-text {
-        margin-top: 20px;
+      &__text {
+        margin-top: 6px;
       }
 
       label,
@@ -112,7 +116,14 @@ body {
       }
 
       .label-space {
-        margin-top: 20px;
+        margin-top: 25px;
+      }
+
+      .warning-text {
+        margin: 1px 0;
+        height: 14px;
+        font-size: 1.4rem;
+        color: $red;
       }
     }
   }

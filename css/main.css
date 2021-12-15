@@ -18,6 +18,10 @@ body {
   min-height: 100vh;
 }
 
+.warning-border {
+  border-color: #ff0000;
+}
+
 .form__section {
   padding: 40px 20px;
 }
@@ -81,8 +85,8 @@ body {
   padding: 0 10px;
 }
 
-.form__section-main .form-text {
-  margin-top: 20px;
+.form__section-main .form__text {
+  margin-top: 6px;
 }
 
 .form__section-main .form label,
@@ -138,7 +142,14 @@ body {
 }
 
 .form__section-main .form .label-space {
-  margin-top: 20px;
+  margin-top: 25px;
+}
+
+.form__section-main .form .warning-text {
+  margin: 1px 0;
+  height: 14px;
+  font-size: 1.4rem;
+  color: #ff0000;
 }
 
 @media screen and (min-width: 768px) {
