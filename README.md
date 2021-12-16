@@ -33,7 +33,7 @@ Live demo: [https://paulaami.github.io/VAT-Converter-Form/](https://paulaami.git
 
 
 ## Screenshots
-![Country information app](./assets/images/screenshot.png)
+![VAT Form Validator](./img/form-validator.jpg)
 
 
 
