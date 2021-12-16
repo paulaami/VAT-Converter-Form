@@ -1,8 +1,4 @@
 
-
-live https://paulaami.github.io/VAT-Converter-Form/
-
-
 # VAT Form Validator
 
 Application - a form-based VAT converter that provides validation of each input and sends data from form via AJAX to the REST API.
