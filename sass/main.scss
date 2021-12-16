@@ -60,8 +60,6 @@ body {
 		.form {
 			@include flex-style;
 			padding: 0 1rem;
-			opacity: 1;
-			transition: opacity 1s;
 
 			&__box {
 				position: relative;
@@ -117,7 +115,7 @@ body {
 			}
 
 			input[type="radio"] {
-				margin-right: 1rem;
+				margin-right: .4rem;
 			}
 
 			input:disabled {
@@ -135,8 +133,16 @@ body {
 			}
 
 			.label-vat {
-				margin-top: 5px;
+				margin-top: .5rem;
 			}
+
+      .confirmation {
+        margin-right: 2rem;
+      }
+
+      .confirmation, .unconfirmation {
+        text-transform: uppercase;
+      }
 
 			// .label-space {
 			//   margin-top: 2rem;
@@ -194,10 +200,9 @@ body {
 		.show-greenbox {
 			top: 50%;
 		}
-
-		.fade {
-			opacity: 0;
-		}
+    .hide {
+      visibility: hidden;
+    }
 	}
 }
 

@@ -9,17 +9,20 @@ const priceBrutto = vatForm.querySelector("#price-brutto");
 const vatRate = vatForm.querySelector(".vat__rate");
 const submitBtn = vatForm.querySelector('.form__button');
 const inputConfirm = vatForm.querySelector('#confirmation');
+const inputUnconfirm = vatForm.querySelector('#unconfirmation');
 const textConfirm = vatForm.querySelector('.validation__confirm');
 const validationVat = vatForm.querySelector('.validation__vat');
 const greenBox = document.querySelector(".green-box");
 const greenBtn = greenBox.querySelector(".green-box-btn");
 const textRequired = vatForm.querySelector('.text-required');
-const allInputs = Array.from(vatForm.querySelectorAll(".all-inputs"));
+const allInputs = [...vatForm.querySelectorAll(".all-inputs")];
 
 
 const maxLength = 255;
 const priceRegex = /^\d+([\,]\d+)*([\.]\d+)?$/;
 priceNetto.disabled = true;
+
+
 
 // TEXT AREA VALIDATION
 const textValidation = () => {
@@ -78,7 +81,7 @@ const bruttoValidation = () => {
 
 //RADIO INPUT CHECK
 const radioValidation = () => {
-  if (inputConfirm.checked) {
+  if (inputConfirm.checked || inputUnconfirm.checked) {
     textConfirm.textContent = "";
   }
 }
@@ -106,7 +109,7 @@ const checkText = () => {
 
 /*CHECK RADIO BTN*/
 const checkConfirm = () => {
-  if (!inputConfirm.checked) {
+  if (!inputConfirm.checked && !inputUnconfirm.checked) {
     textConfirm.textContent = "This field is required"
   }
 }
@@ -133,19 +136,19 @@ const showGreenBox = () => {
 }
 
 greenBtn.addEventListener('click', function () {
-  greenBox.classList.add("fade");
+  greenBox.classList.add("hide");
 })
 
 
 // HIDE FORM
 const hideForm = () => {
-  vatForm.classList.add("fade");
+  vatForm.classList.add("hide");
 }
 
 
 /*CHECK ALL WARNINGS */
 const checkAll = () => {
-  const allWarnings = Array.from(vatForm.querySelectorAll('.warning-text'));
+  const allWarnings = [...vatForm.querySelectorAll('.warning-text')];
 
   let countWarnings = 0;
   allWarnings.forEach((element) => {
