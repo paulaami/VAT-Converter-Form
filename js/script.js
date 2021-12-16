@@ -23,175 +23,174 @@ const priceRegex = /^\d+([\,]\d+)*([\.]\d+)?$/;
 priceNetto.disabled = true;
 
 
-
 // TEXT AREA VALIDATION
 const textValidation = () => {
-  let formDescriptionValue = formDescription.value;
-  let remainingChar = maxLength - formDescriptionValue.length;
-  validationText.textContent = `You can add ${remainingChar} more characters`;
+ let formDescriptionValue = formDescription.value;
+ let remainingChar = maxLength - formDescriptionValue.length;
+ validationText.textContent = `You can add ${remainingChar} more characters`;
 
-  if (formDescriptionValue.length == 0) {
-    validationText.textContent = "";
-  } else if (formDescriptionValue.length >= 1 && formDescriptionValue.length < maxLength) {
-    formDescription.classList.remove("warning-border");
-    validationRequired.textContent = "";
-  } else if (formDescriptionValue.length >= maxLength) {
-    formDescriptionValue = formDescriptionValue.substring(0, maxLength);
-    validationText.textContent = "You can’t enter more than 255 characters";
-  }
+ if (formDescriptionValue.length == 0) {
+  validationText.textContent = "";
+ } else if (formDescriptionValue.length >= 1 && formDescriptionValue.length < maxLength) {
+  formDescription.classList.remove("warning-border");
+  validationRequired.textContent = "";
+ } else if (formDescriptionValue.length >= maxLength) {
+  formDescriptionValue = formDescriptionValue.substring(0, maxLength);
+  validationText.textContent = "You can’t enter more than 255 characters";
+ }
 }
 
 // VAT SELECT VALIDATION
 const vatValidation = () => {
-  let vatValue = vatRate.value;
-  if (vatValue !== "choose") {
-    priceNetto.disabled = false;
-    validationVat.textContent = "";
-  } else if (vatValue === "choose") {
-    priceNetto.disabled = true;
-  }
+ let vatValue = vatRate.value;
+ if (vatValue !== "choose") {
+  priceNetto.disabled = false;
+  validationVat.textContent = "";
+ } else if (vatValue === "choose") {
+  priceNetto.disabled = true;
+ }
 }
 
 // NETTO INPUT VALIDATION (netto value should be only positive number?)
 const nettoValidation = () => {
-  let nettoValue = priceNetto.value;
-  if (!nettoValue.match(priceRegex) || nettoValue.length < 1) {
-    validationNumbers.textContent = "Please, enter correct number";
-  } else {
-    validationNumbers.textContent = "";
-    priceNetto.classList.remove("warning-border");
-  }
+ let nettoValue = priceNetto.value;
+ if (!nettoValue.match(priceRegex) || nettoValue.length < 1) {
+  validationNumbers.textContent = "Please, enter correct number";
+ } else {
+  validationNumbers.textContent = "";
+  priceNetto.classList.remove("warning-border");
+ }
 
-  if (nettoValue.length >= 1) {
-    textRequired.textContent = '';
-  }
+ if (nettoValue.length >= 1) {
+  textRequired.textContent = '';
+ }
 }
 
 
 // BRUTTO INPUT VALIDATION
 const bruttoValidation = () => {
-  let convertedPrice = priceNetto.value.replace(/,/g, '.');
-  if (convertedPrice == '') {
-    validationNumbers.textContent = "";
-    priceBrutto.value = "";
-  } else if (convertedPrice >= 0) {
-    priceBrutto.value = convertedPrice * (parseFloat(vatRate.value) / 100.0) + parseFloat(convertedPrice);
-  }
+ let convertedPrice = priceNetto.value.replace(/,/g, '.');
+ if (convertedPrice == '') {
+  validationNumbers.textContent = "";
+  priceBrutto.value = "";
+ } else if (convertedPrice >= 0) {
+  priceBrutto.value = convertedPrice * (parseFloat(vatRate.value) / 100.0) + parseFloat(convertedPrice);
+ }
 }
 
 //RADIO INPUT CHECK
 const radioValidation = () => {
-  if (inputConfirm.checked || inputUnconfirm.checked) {
-    textConfirm.textContent = "";
-  }
+ if (inputConfirm.checked || inputUnconfirm.checked) {
+  textConfirm.textContent = "";
+ }
 }
 
 const inputsValidation = () => {
-  textValidation()
-  vatValidation()
-  nettoValidation()
-  bruttoValidation()
-  radioValidation()
+ textValidation()
+ vatValidation()
+ nettoValidation()
+ bruttoValidation()
+ radioValidation()
 }
 
 // CHECK INPUTS WHILE TYPING
 allInputs.forEach((input) => {
-  input.addEventListener('input', inputsValidation)
+ input.addEventListener('input', inputsValidation)
 })
 
 /*CHECK TEXT AREA */
 const checkText = () => {
-  if (formDescription.value == '') {
-    formDescription.classList.add("warning-border");
-    validationRequired.textContent = "Text is required";
-  }
+ if (formDescription.value == '') {
+  formDescription.classList.add("warning-border");
+  validationRequired.textContent = "Text is required";
+ }
 }
 
 /*CHECK RADIO BTN*/
 const checkConfirm = () => {
-  if (!inputConfirm.checked && !inputUnconfirm.checked) {
-    textConfirm.textContent = "This field is required"
-  }
+ if (!inputConfirm.checked && !inputUnconfirm.checked) {
+  textConfirm.textContent = "This field is required"
+ }
 }
 
 
 // CHECK VAT RATE
 const checkVat = () => {
-  if (vatRate.value == "choose") {
-    validationVat.textContent = "Please choose correct VAT rate";
-  }
+ if (vatRate.value == "choose") {
+  validationVat.textContent = "Please choose correct VAT rate";
+ }
 }
 
 /*CHECK PRICE NETTO*/
 const checkNetto = () => {
-  if (vatRate.value !== "choose" && priceNetto.value == '') {
-    priceNetto.classList.add("warning-border");
-    textRequired.textContent = "This field is required";
-  }
+ if (vatRate.value !== "choose" && priceNetto.value == '') {
+  priceNetto.classList.add("warning-border");
+  textRequired.textContent = "This field is required";
+ }
 }
 
 // SHOW SUCCESS BOX
 const showGreenBox = () => {
-  greenBox.classList.add("show-greenbox");
+ greenBox.classList.add("show-greenbox");
 }
 
 greenBtn.addEventListener('click', function () {
-  greenBox.classList.add("hide");
+ greenBox.classList.add("hide");
 })
 
 
 // HIDE FORM
 const hideForm = () => {
-  vatForm.classList.add("hide");
+ vatForm.classList.add("hide");
 }
 
 
 /*CHECK ALL WARNINGS */
 const checkAll = () => {
-  const allWarnings = [...vatForm.querySelectorAll('.warning-text')];
+ const allWarnings = [...vatForm.querySelectorAll('.warning-text')];
 
-  let countWarnings = 0;
-  allWarnings.forEach((element) => {
-    if (element.innerHTML !== "") {
-      countWarnings++
-    }
-  })
-  if (countWarnings === 0) {
-    sendData();
+ let countWarnings = 0;
+ allWarnings.forEach((element) => {
+  if (element.innerHTML !== "") {
+   countWarnings++
   }
+ })
+ if (countWarnings === 0) {
+  sendData();
+ }
 }
 
 // CHECK INPUTS BEFORE SUBMIT
 const checkBeforeSubmit = () => {
-  checkText();
-  checkConfirm();
-  checkVat();
-  checkNetto();
-  checkAll();
+ checkText();
+ checkConfirm();
+ checkVat();
+ checkNetto();
+ checkAll();
 }
 
 //SEND DATA DO REST API
 const sendData = async () => {
-  const formData = new FormData(vatForm).entries()
-  const response = await fetch('https://reqres.in/api/users', {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify(Object.fromEntries(formData))
-  });
+ const formData = new FormData(vatForm).entries()
+ const response = await fetch('https://reqres.in/api/users', {
+  method: 'POST',
+  headers: { 'Content-Type': 'application/json' },
+  body: JSON.stringify(Object.fromEntries(formData))
+ });
 
-  const result = await response.json();
-  if (response.status === 201) {
-    console.log(result)
-    hideForm();
-    showGreenBox();
-  } else {
-    alert('ERROR IN SENDING DATA');
-  }
+ const result = await response.json();
+ if (response.status === 201) {
+  console.log(result)
+  hideForm();
+  showGreenBox();
+ } else {
+  alert('ERROR IN SENDING DATA');
+ }
 }
 
 // SUBMIT
 submitBtn.addEventListener('click', function (e) {
-  e.preventDefault();
+ e.preventDefault();
 
-  checkBeforeSubmit();
+ checkBeforeSubmit();
 });

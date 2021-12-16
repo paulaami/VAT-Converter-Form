@@ -4,240 +4,239 @@
 *,
 *::after,
 *::before {
-	margin: 0;
-	padding: 0;
-	box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 html {
-	font-size: 62.5%;
+  font-size: 62.5%;
 }
 
 body {
-	min-height: 100vh;
-	background-color: $pure-white;
-	font-family: "Poppins", sans-serif;
-	color: $dark-blue;
+  min-height: 100vh;
+  background-color: $pure-white;
+  font-family: "Poppins", sans-serif;
+  color: $dark-blue;
 }
 
 .form__section {
-	padding: 4rem 2rem;
+  padding: 4rem 2rem;
 
-	&-container {
-		@include border-style;
-		@include flex-style;
+  &-container {
+    @include border-style;
+    @include flex-style;
 
-		align-items: center;
-		padding: 4rem 0;
-		margin: 0 auto;
-		width: 90vw;
-		max-width: 400px;
-		background-color: $light-blue;
-		box-shadow: 0 0 0.6rem $gray;
+    align-items: center;
+    padding: 4rem 0;
+    margin: 0 auto;
+    width: 90vw;
+    max-width: 40rem;
+    background-color: $light-blue;
+    box-shadow: 0 0 0.6rem $gray;
 
-		&-title {
-			margin-bottom: 3rem;
-			font-weight: 500;
-			font-size: 2.4rem;
-		}
+    &-title {
+      margin-bottom: 3rem;
+      font-weight: 500;
+      font-size: 2.4rem;
+    }
 
-		.wrapper {
-			@include flex-style;
+    .wrapper {
+      @include flex-style;
 
-			align-items: center;
-			max-width: 100%;
-		}
-	}
+      align-items: center;
+      max-width: 100%;
+    }
+  }
 
-	&-image {
-		background-color: $light-blue;
-	}
+  &-image {
+    background-color: $light-blue;
+  }
 
-	&-main {
-		position: relative;
-		max-width: 100%;
+  &-main {
+    position: relative;
+    max-width: 100%;
 
-		.form {
-			@include flex-style;
-			padding: 0 1rem;
+    .form {
+      @include flex-style;
+      padding: 0 1rem;
 
-			&__box {
-				position: relative;
-				display: flex;
-				flex-direction: column;
-			}
+      &__box {
+        position: relative;
+        display: flex;
+        flex-direction: column;
 
-			&__text {
-				margin-top: 0.6rem;
-			}
+        &:nth-child(4) {
+          margin-top: 1rem;
+        }
+      }
 
-			&__description {
-				resize: vertical;
-			}
+      &__text {
+        margin-top: 0.6rem;
+      }
 
-			&__button {
-				margin-top: 3rem;
-				background-color: $purple;
-				color: $pure-white;
-				cursor: pointer;
-				transition: background-color 0.3s;
+      &__description {
+        resize: vertical;
+      }
 
-				&:hover {
-					background-color: lighten($purple, 5%);
-				}
-			}
+      &__button {
+        margin-top: 3rem;
+        background-color: $purple;
+        color: $pure-white;
+        cursor: pointer;
+        transition: background-color 0.3s;
 
-			label,
-			p {
-				font-size: 1.6rem;
-			}
+        &:hover {
+          background-color: lighten($purple, 5%);
+        }
+      }
 
-			textarea:focus,
-			input:focus,
-			select:focus,
-			button:focus {
-				outline-color: $blue;
-			}
+      label,
+      p {
+        font-size: 1.6rem;
+      }
 
-			textarea,
-			input,
-			select,
-			button {
-				@include border-style;
+      textarea:focus,
+      input:focus,
+      select:focus,
+      button:focus {
+        outline-color: $blue;
+      }
 
-				font-size: 1.6rem;
-			}
+      textarea,
+      input,
+      select,
+      button {
+        @include border-style;
 
-			textarea,
-			input,
-			button {
-				padding: 1rem;
-			}
+        font-size: 1.6rem;
+      }
 
-			input[type="radio"] {
-				margin-right: .4rem;
-			}
+      textarea,
+      input,
+      button {
+        padding: 1rem;
+      }
 
-			input:disabled {
-				background-color: $disabled-gray;
-			}
+      input[type="radio"] {
+        margin-right: 0.4rem;
+      }
 
-			.after-submit {
-				position: absolute;
-				right: 0;
-				top: 0.3rem;
-			}
+      input:disabled {
+        background-color: $disabled-gray;
+      }
 
-			.vat__rate {
-				padding: 0.5rem;
-			}
+      .after-submit {
+        position: absolute;
+        right: 0;
+        top: 0.3rem;
+      }
 
-			.label-vat {
-				margin-top: .5rem;
-			}
+      .vat__rate {
+        padding: 0.5rem;
+      }
+
+      .label-vat {
+        margin-top: 0.5rem;
+      }
 
       .confirmation {
         margin-right: 2rem;
       }
 
-      .confirmation, .unconfirmation {
+      .confirmation,
+      .unconfirmation {
         text-transform: uppercase;
       }
 
-			// .label-space {
-			//   margin-top: 2rem;
-			// }
+      .validation__text {
+        height: 2rem;
+        font-size: 1.4rem;
+      }
 
-			.validation__text {
-				height: 2rem;
-				font-size: 1.4rem;
-			}
+      .warning-text {
+        height: 2rem;
+        font-size: 1.4rem;
+        color: $red;
+      }
 
-			.warning-text {
-				// margin: 0.1rem 0 0.1rem 1.1rem;
-				height: 2rem;
-				font-size: 1.4rem;
-				color: $red;
-			}
+      .warning-border {
+        border: 0.1rem solid $red;
+        background-color: $warning-bg;
+      }
+    }
 
-			.warning-border {
-				border: 0.1rem solid $red;
-				background-color: #ff000017;
-			}
-		}
+    .green-box {
+      position: absolute;
+      top: -100%;
+      left: 50%;
+      padding: 5rem 2rem;
+      width: 100%;
+      transform: translate(-50%, -50%);
+      border-radius: 0.8rem;
+      background-color: $green;
+      transition: top 1s;
 
-		.green-box {
-			position: absolute;
-			top: -100%;
-			left: 50%;
-			padding: 5rem 2rem;
-			width: 100%;
-			transform: translate(-50%, -50%);
-			border-radius: 0.8rem;
-			background-color: $green;
-			transition: top 1s;
+      &-text {
+        text-align: center;
+        font-size: 2.3rem;
+        color: $pure-white;
+      }
 
-			&-text {
-				text-align: center;
-				font-size: 2.3rem;
-				color: $pure-white;
-			}
+      &-btn {
+        position: absolute;
+        top: 1rem;
+        right: 1rem;
+        background: transparent;
+        border: transparent;
+        cursor: pointer;
+      }
 
-			&-btn {
-				position: absolute;
-				top: 1rem;
-				right: 1rem;
-				background: transparent;
-				border: transparent;
-				cursor: pointer;
-			}
-
-			&-close {
-				width: 3rem;
-			}
-		}
-
-		.show-greenbox {
-			top: 50%;
-		}
+      &-close {
+        width: 3rem;
+      }
+    }
+    .show-greenbox {
+      top: 50%;
+    }
     .hide {
       visibility: hidden;
     }
-	}
+  }
 }
 
 .cls-1 {
-	fill: none;
-	stroke: #fff;
-	stroke-linecap: round;
-	stroke-linejoin: round;
-	stroke-width: 2px;
+  fill: none;
+  stroke: #fff;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 2px;
 }
 
 @media screen and (min-width: 992px) {
-	.form__section {
-		height: 100vh;
+  .form__section {
+    height: 100vh;
 
-		&-container {
-			position: relative;
-			top: 50%;
-			transform: translateY(-50%);
-			max-width: 95rem;
+    &-container {
+      position: relative;
+      top: 50%;
+      transform: translateY(-50%);
+      max-width: 95rem;
 
-			.wrapper {
-				flex-direction: row;
-				justify-content: space-around;
-				align-items: center;
-				width: 100%;
+      .wrapper {
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+        width: 100%;
 
-				img {
-					width: 42rem;
-				}
-			}
+        img {
+          width: 42rem;
+        }
+      }
 
-			&-title {
-				font-size: 3.6rem;
-			}
-		}
-	}
+      &-title {
+        font-size: 3.6rem;
+      }
+    }
+  }
 }

@@ -24,7 +24,7 @@ body {
 
 .form__section-container {
   border: 0.1rem solid #cdd7e2;
-  border-radius: .8rem;
+  border-radius: 0.8rem;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -38,7 +38,7 @@ body {
   padding: 4rem 0;
   margin: 0 auto;
   width: 90vw;
-  max-width: 400px;
+  max-width: 40rem;
   background-color: #E4EEFA;
   -webkit-box-shadow: 0 0 0.6rem #cdd7e2;
           box-shadow: 0 0 0.6rem #cdd7e2;
@@ -95,6 +95,10 @@ body {
           flex-direction: column;
 }
 
+.form__section-main .form__box:nth-child(4) {
+  margin-top: 1rem;
+}
+
 .form__section-main .form__text {
   margin-top: 0.6rem;
 }
@@ -133,7 +137,7 @@ body {
 .form__section-main .form select,
 .form__section-main .form button {
   border: 0.1rem solid #cdd7e2;
-  border-radius: .8rem;
+  border-radius: 0.8rem;
   font-size: 1.6rem;
 }
 
@@ -144,7 +148,7 @@ body {
 }
 
 .form__section-main .form input[type="radio"] {
-  margin-right: .4rem;
+  margin-right: 0.4rem;
 }
 
 .form__section-main .form input:disabled {
@@ -162,14 +166,15 @@ body {
 }
 
 .form__section-main .form .label-vat {
-  margin-top: .5rem;
+  margin-top: 0.5rem;
 }
 
 .form__section-main .form .confirmation {
   margin-right: 2rem;
 }
 
-.form__section-main .form .confirmation, .form__section-main .form .unconfirmation {
+.form__section-main .form .confirmation,
+.form__section-main .form .unconfirmation {
   text-transform: uppercase;
 }
 
